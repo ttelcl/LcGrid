@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{01E6C743-2D3A-4284-860D-F918899995FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{C8154798-C295-41C1-944F-080C0F946EDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{7846989D-EBB5-4E9B-AD3A-002D36428DBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lcl.GridModel", "Lcl.GridModel\Lcl.GridModel.csproj", "{BA5CDD73-07B4-447E-9DC4-64A352F8279B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{58AD6905-85B3-4345-BF4B-77DDCAB8899B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA5CDD73-07B4-447E-9DC4-64A352F8279B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5CDD73-07B4-447E-9DC4-64A352F8279B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5CDD73-07B4-447E-9DC4-64A352F8279B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5CDD73-07B4-447E-9DC4-64A352F8279B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BA5CDD73-07B4-447E-9DC4-64A352F8279B} = {C8154798-C295-41C1-944F-080C0F946EDC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AFF2AC7-7775-4716-81E5-5CCB0980AE9B}
+	EndGlobalSection
+EndGlobal
