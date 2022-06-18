@@ -22,7 +22,7 @@ namespace Lcl.GridModel
     /// <summary>
     /// Create a new CellColumn
     /// </summary>
-    public CellColumn(
+    protected CellColumn(
       ColumnZone zone,
       string id)
     {
