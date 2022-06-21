@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Lcl.GridModel.MvvmSupport;
+
 namespace Lcl.GridModel
 {
   /// <summary>
@@ -17,10 +19,12 @@ namespace Lcl.GridModel
   /// an index-like role to retrieve a Cell from a row.
   /// CellColumns normally are define a "type" and behaviour for cells belonging to that column
   /// </summary>
-  public abstract class CellColumn: IHasGrid
+  public abstract class CellColumn: ViewModelBase, IHasGrid
   {
     /// <summary>
-    /// Create a new CellColumn
+    /// Create a new CellColumn.
+    /// While this constructor associates the new column with a Zone, it does not insert
+    /// it in it yet; that is done by LcGrid.NewColumn()
     /// </summary>
     protected CellColumn(
       ColumnZone zone,
@@ -54,5 +58,24 @@ namespace Lcl.GridModel
     /// a different concrete type than the cell for a data row.
     /// </summary>
     public abstract Cell CreateCell(CellRow row);
+
+    /// <summary>
+    /// Get the cell at the intersection of this column and the given row.
+    /// This is a redirection to the indexer of the row.
+    /// </summary>
+    /// <param name="row">
+    /// The row for which to find this column's cell
+    /// </param>
+    /// <param name="create">
+    /// (default false). When true: if the cell is missing, create it using this
+    /// column's CreateCell() method.
+    /// </param>
+    /// <returns>
+    /// The cell that was found or created, or null if the cell was not yet initialized
+    /// and 'create' was false.
+    /// </returns>
+    public Cell? this[CellRow row, bool create = false] {
+      get => row[this, create];
+    }
   }
 }

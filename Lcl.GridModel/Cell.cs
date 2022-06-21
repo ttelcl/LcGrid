@@ -9,13 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Lcl.GridModel.MvvmSupport;
+
 namespace Lcl.GridModel
 {
   /// <summary>
   /// A cell, appearing on the crossing of a CellRow and a CellColumn.
   /// Cells are stored in their rows, but normally created by their columns.
   /// </summary>
-  public abstract class Cell: ICell, IHasGrid
+  public abstract class Cell: ViewModelBase, ICell, IHasGrid
   {
     /// <summary>
     /// Create a new Cell

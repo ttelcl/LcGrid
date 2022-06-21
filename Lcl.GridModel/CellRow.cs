@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Lcl.GridModel.MvvmSupport;
+
 namespace Lcl.GridModel
 {
   /// <summary>
@@ -16,14 +18,16 @@ namespace Lcl.GridModel
   /// Instances of this class contain the cell instances for the cells in the row
   /// (unlike CellColumns, which are merely referenced by cells)
   /// </summary>
-  public class CellRow: IHasGrid
+  public class CellRow: ViewModelBase, IHasGrid
   {
     private Dictionary<string, Cell> _cells;
 
     /// <summary>
     /// Create a new CellRow
+    /// While this constructor associates the new rows with a Zone, it does not insert
+    /// it in it yet; that is done by LcGrid.NewRow()
     /// </summary>
-    public CellRow(
+    protected internal CellRow(
       RowZone zone)
     {
       Zone = zone;
